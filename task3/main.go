@@ -1,6 +1,7 @@
 package main
 
 import (
+	exercise1 "task3/exercises1"
 	"task3/gormtest"
 
 	"gorm.io/driver/mysql"
@@ -10,9 +11,9 @@ import (
 func main() {
 	dsn := "root:root@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&parseTime=True"
 	db, _ := gorm.Open(mysql.Open(dsn), &gorm.Config{})
-	// exercise1.Run(db)
-	// exercise1.Run1(db)
-	// exercise1.TransferMoney(db, 1, 2, 200)
+	exercise1.Run(db)
+	exercise1.Run1(db)
+	exercise1.TransferMoney(db, 1, 2, 200)
 
 	// sqltest.SqlCreateTable(db)
 	// sqltest.SqlDepartment(db)

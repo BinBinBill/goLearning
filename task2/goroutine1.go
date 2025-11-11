@@ -37,7 +37,7 @@ type Scheduler struct {
 func NewScheduler(maxConcurrent, totalTasks int) *Scheduler {
 	return &Scheduler{
 		maxConcurrent:  maxConcurrent,
-		taskQueue:      make(chan Task, totalTasks),
+		z:              make(chan Task, totalTasks),
 		resultQueue:    make(chan TaskResult, totalTasks),
 		totalTasks:     totalTasks,
 		completedTasks: 0,
